@@ -1,8 +1,3 @@
-/*
-Дана матрица А(nxn). Найти количество положительных
-элементов в каждом из столбцов. Поменять местами столбцы с
-наибольшим и наименьшим количеством положительных элементов.
-*/
 #include <iostream>
 #include <locale.h>
 #include <malloc.h>
@@ -16,31 +11,30 @@ int get_max(int** a, int n);
 int get_min(int** a, int n);
 int quantity(int** a, int n, int j);
 void swap_columns(int** arr, int n, int j1, int j2);
-void Sort(int** a, int n);
+void sort(int** a, int n);
 
 using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "rus");
-	//srand(time(NULL));
 	int  n;
 
-	printf("Введите порядок квадратной матрицы: n=");
+	cout << "Р’РІРµРґРёС‚Рµ РїРѕСЂСЏРґРѕРє РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹: n = ";
 	scanf_s("%d", &n);
 
 	int** A = create_matr(n);
-	printf("Введите элементы матрицы:\n");
+	cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°С‚СЂРёС†С‹:" << endl;
 	read_matr(A, n);
 
-	cout << "Исходная матрица: " << endl;
+	cout << "РСЃС…РѕРґРЅР°СЏ РјР°С‚СЂРёС†Р°: " << endl;
 	print_matr(A, n);
 
 	if (get_min(A, n) != get_max(A, n)) {
 		swap_columns(A, n, get_max(A, n), get_min(A, n));
-		cout << "Новая матрица: " << endl;
+		cout << "РќРѕРІР°СЏ РјР°С‚СЂРёС†Р°: " << endl;
 		print_matr(A, n);}
 	else
-		cout << "В матрице нет столбцов, которые бы выполняли условие в задаче." << endl;
+		cout << "Р’ РјР°С‚СЂРёС†Рµ РЅРµС‚ СЃС‚РѕР»Р±С†РѕРІ, РєРѕС‚РѕСЂС‹Рµ Р±С‹ РІС‹РїРѕР»РЅСЏР»Рё СѓСЃР»РѕРІРёРµ РІ Р·Р°РґР°С‡Рµ." << endl;
 
 	clear_matr(A, n);
 	return 0;
@@ -85,7 +79,7 @@ int quantity(int** a, int n, int j){
 	for (int i = 0; i < n; i++)
 		if (a[j][i] >= 0)
 			k++;
-	//cout << endl << "Количество положительных элементов: " << k << endl;
+	//cout << endl << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << k << endl;
 	return k;}
 
 int get_max(int** a, int n) {
@@ -112,7 +106,7 @@ void swap_columns(int** arr, int n, int j1, int j2) {
 	arr[j1] = arr[j2];
 	arr[j2] = temp; }
 
-void Sort(int** a, int n){
+void sort(int** a, int n){
 	int i, j;
 	bool swapped;
 	for (i = 0; i < n - 1; i++){
