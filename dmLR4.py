@@ -24,8 +24,9 @@ def degree(m, n):
 def razmesh_pov(elt, m, n, s):
     if n == 0:
         print(s)
-    for i in range(1, m):
-        razmesh_pov(elt, m, n - 1, s + elt[i] + ' ')
+    else:
+        for i in range(0, m):
+            razmesh_pov(elt, m, n - 1, s + elt[i] + ' ')
 
 
 elt = list()
