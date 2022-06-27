@@ -13,7 +13,7 @@ struct node_cx {
 	node_cx* next;
 };
 
-data_cx new_Òx(float real, float imag);
+data_cx new_—Åx(float real, float imag);
 void print_data(data_cx z);
 void push(node_cx*& head, node_cx*& tail, data_cx z);
 bool check(node_cx*& head);
@@ -24,26 +24,26 @@ void main() {
 	node_cx* head = NULL, * tail = NULL;
 
 	char name[50];
-	std::cout << "¬‚Â‰ËÚÂ Ì‡Á‚‡ÌËÂ Ù‡ÈÎ‡ ‰Îˇ Ò˜ËÚ˚‚‡ÌËˇ ÍÓÏÔÎÂÍÒÌ˚ı ˜ËÒÂÎ: " << std::endl;
-	std::cin >> name;
-	std::ifstream fin;
+	cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–∞–∑–≤–∞–Ω–∏–µ —Ñ–∞–π–ª–∞ –¥–ª—è —Å—á–∏—Ç—ã–≤–∞–Ω–∏—è –∫–æ–º–ø–ª–µ–∫—Å–Ω—ã—Ö —á–∏—Å–µ–ª: " << std::endl;
+	cin >> name;
+	ifstream fin;
 	fin.open(name);
 
 	if (fin.is_open()) {
 		float rl, im;
 		fin >> rl >> im;
 		while (!fin.fail()) {
-			push(head, tail, new_Òx(rl, im));
+			push(head, tail, new_—Åx(rl, im));
 			fin >> rl >> im;
 		}}
 	fin.close();
 
 	if (head == NULL)
-		cout << "œÛÒÚÓÈ ÒÚÂÍ" << endl;
+		cout << "–ü—É—Å—Ç–æ–π —Å—Ç–µ–∫" << endl;
 	else {
 		if (check(head)) {
 			node_cx* temp = head;
-			data_cx res = new_Òx(0, 0);
+			data_cx res = new_—Åx(0, 0);
 			while (temp) {
 				res.real += temp->val.real;
 				res.imag += temp->val.imag;
@@ -52,10 +52,10 @@ void main() {
 			print_data(res);
 		}
 		else
-			cout << "¬ ÒÚÂÍÂ ÌÂ ÚÓÎ¸ÍÓ 1 ÏÌËÏÓÂ ˜ËÒÎÓ" << endl;
+			cout << "–í —Å—Ç–µ–∫–µ –Ω–µ —Ç–æ–ª—å–∫–æ 1 –º–Ω–∏–º–æ–µ —á–∏—Å–ª–æ" << endl;
 	}}
 
-data_cx new_Òx(float real, float imag){
+data_cx new_—Åx(float real, float imag){
 	data_cx z;
 	z.real = real;
 	z.imag = imag;
@@ -63,8 +63,8 @@ data_cx new_Òx(float real, float imag){
 }
 
 void print_data(data_cx z) {
-	cout << "ƒÂÈÒÚ‚ËÚÂÎ¸Ì‡ˇ ˜‡ÒÚ¸ ÍÓÏÔÎÂÍÒÌÓ„Ó ˜ËÒÎ‡: " << z.real << endl;
-	cout << "ÃÌËÏ‡ˇ ˜‡ÒÚ¸ ÍÓÏÔÎÂÍÒÌÓ„Ó ˜ËÒÎ‡:  " << z.imag << endl;
+	cout << "–î–µ–π—Å—Ç–≤–∏—Ç–µ–ª—å–Ω–∞—è —á–∞—Å—Ç—å –∫–æ–º–ø–ª–µ–∫—Å–Ω–æ–≥–æ —á–∏—Å–ª–∞: " << z.real << endl;
+	cout << "–ú–Ω–∏–º–∞—è —á–∞—Å—Ç—å –∫–æ–º–ø–ª–µ–∫—Å–Ω–æ–≥–æ —á–∏—Å–ª–∞:  " << z.imag << endl;
 }
 
 void push(node_cx*& head, node_cx*& tail, data_cx z) {
